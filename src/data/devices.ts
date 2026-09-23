@@ -2,6 +2,28 @@ export type Device = { brand: string; series: string; model: string; badge?: str
 
 export const brands = ["Apple", "Samsung", "OnePlus", "Google", "Motorola", "Nothing"];
 
+export const brandLogos: Record<string, string> = {
+  Apple: "https://cdn.simpleicons.org/apple/111111",
+  Samsung: "https://cdn.simpleicons.org/samsung/1428A0",
+  OnePlus: "https://cdn.simpleicons.org/oneplus/F5010C",
+  Google: "https://cdn.simpleicons.org/google/4285F4",
+  Motorola: "https://cdn.simpleicons.org/motorola/111111",
+  Nothing: "https://cdn.simpleicons.org/nothing/111111",
+};
+
+const deviceImages: Record<string, string> = {
+  Apple: "https://images.pexels.com/photos/29020349/pexels-photo-29020349.jpeg?auto=compress&cs=tinysrgb&w=700",
+  Samsung: "https://images.pexels.com/photos/7742503/pexels-photo-7742503.jpeg?auto=compress&cs=tinysrgb&w=700",
+  OnePlus: "https://images.pexels.com/photos/10343719/pexels-photo-10343719.jpeg?auto=compress&cs=tinysrgb&w=700",
+  Google: "https://images.pexels.com/photos/32218867/pexels-photo-32218867.jpeg?auto=compress&cs=tinysrgb&w=700",
+  Motorola: "https://images.pexels.com/photos/215583/pexels-photo-215583.jpeg?auto=compress&cs=tinysrgb&w=700",
+  Nothing: "https://images.pexels.com/photos/36768424/pexels-photo-36768424.jpeg?auto=compress&cs=tinysrgb&w=700",
+};
+
+export function getDeviceImage(device: Pick<Device, "brand" | "model" | "series">) {
+  return deviceImages[device.brand] ?? deviceImages.Apple;
+}
+
 export const devices: Device[] = [
   { brand: "Apple", series: "iPhone Duo", model: "iPhone Duo", badge: "New" },
   { brand: "Apple", series: "iPhone 18", model: "iPhone 18 Pro Max", badge: "New" },

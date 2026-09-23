@@ -12,9 +12,23 @@ export default function Footer() {
           </Link>
           <p>Fast, transparent device repair powered by verified local technician partners.</p>
         </div>
-        <div><b>Services</b><a href="/book">Screen repair</a><a href="/book">Battery repair</a><a href="/book">Diagnostics</a></div>
-        <div><b>Company</b><Link href="/partner">Partner network</Link><a href="#">Warranty</a><a href="#">Contact</a></div>
-        <div><b>Available daily</b><span>9:00 AM – 9:00 PM</span><span>Launch coverage expanding city by city.</span></div>
+        <div>
+          <b>Services</b>
+          <Link href="/book">Screen repair</Link>
+          <Link href="/book">Battery repair</Link>
+          <Link href="/book">Diagnostics</Link>
+        </div>
+        <div>
+          <b>Company</b>
+          <Link href="/partner">Partner network</Link>
+          <Link href="/faq">FAQs</Link>
+          <a href="mailto:support@turrantfix.com">Contact</a>
+        </div>
+        <div>
+          <b>Available daily</b>
+          <span>9:00 AM – 9:00 PM</span>
+          <span>Launch coverage expanding city by city.</span>
+        </div>
       </div>
       <div className="container footer-bottom"><span>© 2026 TurrantFix. All rights reserved.</span><span>Privacy · Terms</span></div>
     </footer>
