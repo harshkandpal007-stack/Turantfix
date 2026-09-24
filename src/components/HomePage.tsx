@@ -31,7 +31,7 @@ const serviceCards = [
     title: "Screen replacement",
     subtitle: "Cracks, dead pixels or touch issues",
     price: "From ₹1,499",
-    duration: "45–90 min",
+    duration: "18–25 min",
     rating: "4.9",
     reviews: "1.2k",
     image:
@@ -50,7 +50,7 @@ const serviceCards = [
     title: "Battery replacement",
     subtitle: "Fast drain, swelling or sudden shutdowns",
     price: "From ₹1,199",
-    duration: "35–75 min",
+    duration: "15–22 min",
     rating: "4.8",
     reviews: "860",
     image:
@@ -69,7 +69,7 @@ const serviceCards = [
     title: "Charging & ports",
     subtitle: "Loose port or intermittent charging",
     price: "From ₹999",
-    duration: "40–90 min",
+    duration: "12–20 min",
     rating: "4.8",
     reviews: "640",
     image:
@@ -88,7 +88,7 @@ const serviceCards = [
     title: "Device diagnostics",
     subtitle: "Find the fault before spending on repair",
     price: "From ₹299",
-    duration: "30–60 min",
+    duration: "10–18 min",
     rating: "4.9",
     reviews: "520",
     image:
@@ -240,7 +240,7 @@ export default function HomePage() {
               </a>
             </div>
 
-            <div className="tf-trust-inline" aria-label="TurrantFix trust promises">
+            <div className="tf-trust-inline" aria-label="TurantFix trust promises">
               <span>
                 <BadgeCheck size={16} /> Verified partners
               </span>
@@ -365,9 +365,9 @@ export default function HomePage() {
               >
                 <Link href={`/book?brand=${encodeURIComponent(brand)}`} className="tf-brand-tile">
                   <span className="tf-brand-symbol">
-                    <img src={brandLogos[brand]} alt={`${brand} logo`} />
+                    <img src={brandLogos[brand]} alt={`${brand} logo`} style={brand === "Nothing" ? { width: 96, height: 18, objectFit: "contain" } : undefined} />
                   </span>
-                  <b>{brand}</b>
+                  {brand !== "Nothing" && <b>{brand}</b>}
                   <ChevronRight size={16} />
                 </Link>
               </motion.div>
@@ -519,7 +519,7 @@ export default function HomePage() {
             </div>
 
             <div className="tf-trust-vault-copy">
-              <span className="tf-kicker tf-kicker-light">THE TURRANTFIX PROMISE</span>
+              <span className="tf-kicker tf-kicker-light">THE TURANTFIX PROMISE</span>
               <h2>Four things you know before the screwdriver turns.</h2>
               <p>Trust should come from visible controls, not vague promises.</p>
 

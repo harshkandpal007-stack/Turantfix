@@ -1,5 +1,29 @@
 import Link from "next/link";
-import { Zap } from "lucide-react";
+
+function BrandLockup() {
+  return (
+    <>
+      <span
+        className="brand-mark"
+        style={{
+          width: 46,
+          height: 46,
+          borderRadius: 14,
+          background: "linear-gradient(145deg, #181a16 0%, #272a23 100%)",
+          position: "relative",
+          overflow: "hidden",
+          boxShadow: "inset 0 1px 0 rgba(255,255,255,.06)",
+        }}
+      >
+        <span style={{ position: "absolute", width: 18, height: 18, borderRadius: 999, background: "#b3f12f", left: 8, top: 14 }} />
+        <span style={{ position: "absolute", width: 18, height: 4, borderRadius: 999, background: "#b3f12f", right: 7, top: 21, transform: "rotate(-32deg)" }} />
+      </span>
+      <span style={{ fontSize: 29, fontWeight: 900, letterSpacing: "-1.1px" }}>
+        Turant<span style={{ color: "#78a900" }}>Fix</span>
+      </span>
+    </>
+  );
+}
 
 export default function Footer() {
   return (
@@ -7,8 +31,7 @@ export default function Footer() {
       <div className="container footer-grid">
         <div>
           <Link href="/" className="brand brand-light">
-            <span className="brand-mark"><Zap size={22} fill="currentColor" /></span>
-            <span>Turrant<span>Fix</span></span>
+            <BrandLockup />
           </Link>
           <p>Fast, transparent device repair powered by verified local technician partners.</p>
         </div>
@@ -22,7 +45,7 @@ export default function Footer() {
           <b>Company</b>
           <Link href="/partner">Partner network</Link>
           <Link href="/faq">FAQs</Link>
-          <a href="mailto:support@turrantfix.com">Contact</a>
+          <a href="mailto:support@turantfix.com">Contact</a>
         </div>
         <div>
           <b>Available daily</b>
@@ -30,7 +53,7 @@ export default function Footer() {
           <span>Launch coverage expanding city by city.</span>
         </div>
       </div>
-      <div className="container footer-bottom"><span>© 2026 TurrantFix. All rights reserved.</span><span>Privacy · Terms</span></div>
+      <div className="container footer-bottom"><span>© 2026 TurantFix. All rights reserved.</span><span>Privacy · Terms</span></div>
     </footer>
   );
 }

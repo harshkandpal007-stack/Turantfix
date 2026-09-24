@@ -1,8 +1,6 @@
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
-    ArrowRight,
     BadgeCheck,
     CheckCircle2,
     Clock3,
@@ -10,11 +8,10 @@ import {
     MessageCircle,
     ShieldCheck,
     Smartphone,
-    Wrench,
 } from "lucide-react";
 
-const WHATSAPP_URL = "https://wa.me/"; // Add your WhatsApp number later, e.g. https://wa.me/9198XXXXXXXX
-const SUPPORT_EMAIL = "mailto:support@turrantfix.com"; // Replace if you use a different support inbox.
+const WHATSAPP_URL = "https://wa.me/";
+const SUPPORT_EMAIL = "mailto:support@turantfix.com";
 
 const faqs = [
     {
@@ -23,11 +20,11 @@ const faqs = [
     },
     {
         q: "Will I know the price before the technician starts?",
-        a: "Yes. TurrantFix is designed around approval-first repair. You can see the starting price while booking, and if diagnosis changes the scope, the technician explains the updated quote before any additional chargeable work begins.",
+        a: "Yes. TurantFix is designed around approval-first repair. You can see the starting price while booking, and if diagnosis changes the scope, the technician explains the updated quote before any additional chargeable work begins.",
     },
     {
         q: "Who will come to repair my phone?",
-        a: "Your job is assigned to a TurrantFix repair partner matched to the required skill and service area. Our partner model is designed to include identity checks, capability checks and service standards before a partner is activated on the platform.",
+        a: "Your job is assigned to a TurantFix repair partner matched to the required skill and service area. Our partner model is designed to include identity checks, capability checks and service standards before a partner is activated on the platform.",
     },
     {
         q: "Do I have to hand over my phone and wait for days?",
@@ -43,7 +40,7 @@ const faqs = [
     },
     {
         q: "Is there a warranty on the repair?",
-        a: "Eligible repairs will show their applicable warranty terms before confirmation. Coverage can vary by repair type and selected part, so TurrantFix does not hide the conditions behind a generic promise. The exact coverage should be visible in your booking summary.",
+        a: "Eligible repairs will show their applicable warranty terms before confirmation. Coverage can vary by repair type and selected part, so TurantFix does not hide the conditions behind a generic promise. The exact coverage should be visible in your booking summary.",
     },
     {
         q: "What if the technician discovers a different problem?",
@@ -58,7 +55,7 @@ const faqs = [
         a: "The booking flow is being designed to support rescheduling and cancellation before the visit. Final cancellation rules can depend on whether a partner has already travelled or a specific part has been arranged for your repair.",
     },
     {
-        q: "How do I know whether TurrantFix supports my exact phone model?",
+        q: "How do I know whether TurantFix supports my exact phone model?",
         a: "Start with the device selector. Choose your brand and exact model to see supported repair options. If your model is not listed, contact support and we can confirm part availability before you spend time completing a booking.",
     },
     {
@@ -81,9 +78,6 @@ export default function FAQPage() {
                                 Clear answers about pricing, partners, repair time, privacy and warranty before you decide to book.
                             </p>
                             <div className="faq-hero-actions">
-                                <Link href="/book" className="btn btn-lime">
-                                    Select your phone <ArrowRight size={18} />
-                                </Link>
                                 <a className="faq-contact-link" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
                                     <MessageCircle size={18} /> WhatsApp support
                                 </a>
@@ -110,9 +104,16 @@ export default function FAQPage() {
                             <p>Open only what you need. If your doubt is not here, contact us directly.</p>
                             <div className="faq-aside-proof">
                                 <Smartphone />
-                                <div><b>Still deciding?</b><span>Checking your device takes less than a minute.</span></div>
+                                <div><b>Still deciding?</b><span>Send your model and issue on WhatsApp or email and we can guide you.</span></div>
                             </div>
-                            <Link href="/book" className="btn btn-dark">Check my device <ArrowRight size={17} /></Link>
+                            <div className="faq-hero-actions" style={{ marginTop: 18 }}>
+                                <a className="faq-contact-link" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                                    <MessageCircle size={18} /> WhatsApp support
+                                </a>
+                                <a className="faq-contact-link" href={SUPPORT_EMAIL}>
+                                    <Mail size={18} /> Email us
+                                </a>
+                            </div>
                         </aside>
 
                         <div className="faq-accordion">
@@ -144,7 +145,7 @@ export default function FAQPage() {
                                 <MessageCircle size={18} /> WhatsApp
                             </a>
                             <a href={SUPPORT_EMAIL} className="btn faq-email-btn">
-                                <Mail size={18} /> Email support
+                                <Mail size={18} /> Email us
                             </a>
                         </div>
                     </div>
