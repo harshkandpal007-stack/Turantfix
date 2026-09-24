@@ -6,18 +6,27 @@ function BrandLockup() {
       <span
         className="brand-mark"
         style={{
-          width: 46,
-          height: 46,
-          borderRadius: 14,
-          background: "linear-gradient(145deg, #181a16 0%, #272a23 100%)",
-          position: "relative",
+          width: 34,
+          height: 34,
+          borderRadius: 10,
+          background: "#fff",
+          border: "1px solid rgba(255,255,255,.12)",
           overflow: "hidden",
-          boxShadow: "inset 0 1px 0 rgba(255,255,255,.06)",
+          boxShadow: "0 8px 24px rgba(0,0,0,.18)",
         }}
       >
-        <span style={{ position: "absolute", width: 18, height: 18, borderRadius: 999, background: "#b3f12f", left: 8, top: 14 }} />
-        <span style={{ position: "absolute", width: 18, height: 4, borderRadius: 999, background: "#b3f12f", right: 7, top: 21, transform: "rotate(-32deg)" }} />
+        <img
+          src="/images/logo/turantfix-logo.png"
+          alt="TurantFix logo"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            display: "block",
+          }}
+        />
       </span>
+
       <span style={{ fontSize: 29, fontWeight: 900, letterSpacing: "-1.1px" }}>
         Turant<span style={{ color: "#78a900" }}>Fix</span>
       </span>
