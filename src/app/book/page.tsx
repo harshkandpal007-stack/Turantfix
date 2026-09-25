@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { brandLogos, brands, devices, getDeviceImage, issues } from "@/data/devices";
 import { ArrowLeft, ArrowRight, CalendarDays, Check, ChevronLeft, Clock3, MapPin, Search, ShieldCheck, Smartphone, Wrench } from "lucide-react";
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -18,7 +18,7 @@ const schema = z.object({
 });
 type FormData = z.infer<typeof schema>;
 
-export default function BookPage() {
+function BookPageContent() {
   const searchParams = useSearchParams();
   const initialDevice = searchParams.get("device") || "";
   const initialDeviceData = devices.find((item) => item.model === initialDevice);
@@ -88,4 +88,8 @@ export default function BookPage() {
       <aside className="booking-summary"><span className="kicker">YOUR REPAIR</span><h3>{device || "Select a device"}</h3><div className="summary-device">{selectedDevice ? <div className="summary-device-photo" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}><img src={getDeviceImage(selectedDevice)} alt={`${selectedDevice.model} phone`} style={{ width: 54, height: 54, objectFit: "contain", objectPosition: "center center", display: "block" }} /></div> : <div className="summary-device-placeholder"><Smartphone /></div>}<div><b>{device || "Device not selected"}</b><span>{selectedIssue?.name || "Choose an issue next"}</span></div></div><div className="summary-line"><span>Service</span><b>{selectedIssue?.name || "—"}</b></div><div className="summary-line"><span>Indicative price</span><b>{selectedIssue ? `From ₹${selectedIssue.price.toLocaleString("en-IN")}` : "—"}</b></div><div className="summary-line"><span>Time</span><b>{slot ? slot.split("|")[1] : "—"}</b></div><div className="summary-note"><MapPin /><span>Exact serviceability can be checked from PIN code once your partner-zone backend is connected.</span></div></aside>
     </div>
   </main><Footer /></>;
+}
+
+export default function BookPage() {
+  return <Suspense fallback={null}><BookPageContent /></Suspense>;
 }

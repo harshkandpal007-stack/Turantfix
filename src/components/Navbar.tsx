@@ -10,8 +10,8 @@ function BrandLockup() {
       <span
         className="brand-mark"
         style={{
-          width: 34,
-          height: 34,
+          width: 37,
+          height: 37,
           borderRadius: 10,
           background: "#fff",
           border: "1px solid rgba(20,20,20,.08)",
@@ -23,15 +23,15 @@ function BrandLockup() {
           src="/images/logo/turantfix-logo.png"
           alt="TurantFix logo"
           style={{
-            width: "100%",
-            height: "100%",
+            width: "80%",
+            height: "80%",
             objectFit: "contain",
             display: "block",
           }}
         />
       </span>
 
-      <span style={{ fontSize: 29, fontWeight: 900, letterSpacing: "-1.1px" }}>
+      <span style={{ fontSize: 30, fontWeight: 900, letterSpacing: "-1.1px" }}>
         Turant<span style={{ color: "#78a900" }}>Fix</span>
       </span>
     </>
